@@ -1,0 +1,95 @@
+/* styles.css */
+
+/* Universal Styles */
+* {
+  box-sizing: border-box; /* Ensure padding and borders are included in element's total width and height */
+  margin: 0; /* Remove default margins */
+  padding: 0; /* Remove default padding */
+  font-family: Arial, sans-serif; /* Use a clean, sans-serif font */
+}
+
+body {
+  background-color: #f4f4f4; /* Light gray background for contrast */
+  color: #333; /* Dark text color for readability */
+  line-height: 1.6; /* Improve text readability */
+  display: flex; /* Flexbox layout for centering */
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  height: 100vh; /* Full viewport height */
+}
+
+#root{
+  width:90%;
+  margin:auto;
+}
+
+/* Main Container */
+.container {
+  margin: auto;
+  background-color: white; /* White background for the main container */
+  padding: 20px; /* Padding around the container */
+  padding-inline: 50px;
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  max-width: 1000px; /* Max width for the container */
+  width: 100%; /* Allow the container to be responsive */
+}
+
+/* Headings */
+h1, h2, h3 {
+  text-align: center; /* Center align headings */
+  margin-bottom: 15px; /* Space below headings */
+}
+
+h1 {
+  font-size: 2.5em; /* Larger font size for main heading */
+}
+h3{
+  margin-top:-15px;
+}
+
+/* Table Styles */
+table {
+  width: 100%; /* Full width for table */
+  border-collapse: collapse; /* Remove space between table cells */
+}
+
+th, td {
+  padding: 10px; /* Padding for cells */
+  text-align: center; /* Center align text */
+  border: 1px solid #ccc; /* Border for table cells */
+}
+
+thead {
+  background-color: #007bff; /* Blue background for the header */
+  color: white; /* White text color for header */
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f9f9f9; /* Light background for even rows */
+}
+
+tbody tr:hover {
+  background-color: #eaeaea; /* Change background color on hover for rows */
+}
+
+/* Responsive Media Queries */
+@media (max-width: 600px) {
+  /* Stack elements on smaller screens */
+  h1 {
+      font-size: 1.5em; /* Slightly smaller font size */
+  }
+
+  h2{
+    margin-top:-15px;
+    font-size: 1.2em;
+  }
+  
+
+  th, td {
+      font-size: 0.9em; /* Smaller font size for table cells */
+  }
+  .container {
+    padding-inline: 10px;
+  }
+}
