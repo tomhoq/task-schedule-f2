@@ -1,24 +1,18 @@
 import React, { useEffect, useState } from 'react';
-import { getMondayStart, getWeekNumber, isInActivePeriod, getRoomsForWeek } from '../script'; // Adjust the import path as necessary
+import { getMondayStart, getWeekNumber, isInActivePeriod, getRoomsForWeek } from './scripts/script'; // Adjust the import path as necessary
 import './App.css'; // Import your CSS file
+import { tasks } from './scripts/data';
 
 function App() {
     const [info, setInfo] = useState({
         rooms: [],
-        tasks: [
-            "Glass (25 kr)",
-            "Cardboard + Plastic (25 kr)",
-            "Paper + Metal (25 kr)",
-            "Kitchen cloths (25 kr)",
-            "Shopping"
-        ],
         isActive: true,
         weekInterval: null,
         current: null
     });
 
     const displayTasks = () => {
-        const today = new Date(); // Get the current date
+        const today = new Date("2025-01-25"); // Get the current date
         const weekNumber = getWeekNumber(today); // Get the current week number
         // Set the week interval (Start and End of the week)
         const startOfWeek = getMondayStart(today);
@@ -52,33 +46,37 @@ function App() {
     }, []);
 
     return (
-        <div className="container"> {/* Main container for centering */}
-            <h1>Week {info.current ? `${info.current}` : 'N/A'}</h1>
-            <h2>{info.weekInterval || 'N/A'}</h2>
-            <h1>Tasks for Current Week</h1>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Task Name</th>
-                        <th>Assigned Room</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {info.rooms.length > 0 ? (
-                        info.rooms.map((room, index) => (
-                            <tr key={index}>
-                                <td>{info.tasks[index]}</td>
-                                <td>{room}</td>
-                            </tr>
-                        ))
-                    ) : (
+        <div id="main">
+            <div className="container"> {/* Main container for centering */}
+                <h1>Week {info.current ? `${info.current}` : 'N/A'}</h1>
+                <h2>{info.weekInterval || 'N/A'}</h2>
+                <h1>Tasks for Current Week</h1>
+                <table>
+                    <thead>
                         <tr>
-                            <td colSpan="2">No active rooms for the current week.</td>
+                            <th>Task Name</th>
+                            <th>Assigned Room</th>
                         </tr>
-                    )}
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                        {info.rooms.length > 0 ? (
+                            info.rooms.map((room, index) => (
+                                <tr key={index}>
+                                    <td>{tasks[index]}</td>
+                                    <td>{room}</td>
+                                </tr>
+                            ))
+                        ) : (
+                            <tr>
+                                <td colSpan="2">No active rooms for the current week.</td>
+                            </tr>
+                        )}
+                    </tbody>
+                </table>
+            </div>
+            <a href="https://github.com/tomhoq/task-schedule-f2">Source code</a>
         </div>
+        
     );
 }
 

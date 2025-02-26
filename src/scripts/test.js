@@ -1,4 +1,4 @@
-import { getMondayStart, getWeekNumber, isInActivePeriod } from "./tasks/script.js";
+import { getMondayStart, getWeekNumber, isInActivePeriod } from "./script.js";
 
 test("getMondayStart should return the correct Monday for given dates", () => {
     expect(getMondayStart(new Date("2025-01-08"))).toEqual(new Date("2025-01-06")); // Wed → Mon
