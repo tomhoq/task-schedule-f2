@@ -12,7 +12,7 @@ function App() {
     });
 
     const displayTasks = () => {
-        const today = new Date("2025-01-25"); // Get the current date
+        const today = new Date(); // Get the current date
         const weekNumber = getWeekNumber(today); // Get the current week number
         // Set the week interval (Start and End of the week)
         const startOfWeek = getMondayStart(today);
