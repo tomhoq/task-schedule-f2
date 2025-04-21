@@ -1,5 +1,5 @@
 export const schedule = 
-        `January 3-week,Glass (25 kr),Cardboard + Plastic (25 kr),Paper + Metal (25 kr),Kitchen cloths (25 kr),Shopping
+        `January 3-week,Glass ,Cardboard + Plastic ,Paper + Metal ,Kitchen cloths ,Shopping
         Week 1,Room 1,Room 2,Room 3,Room 4,Room 6 + 12
         Week 2,Room 2,Room 3,Room 4,Room 6,Room 7 + 13
         Week 3,Room 3,Room 4,Room 6,Room 7,Room 8 + 1
@@ -47,9 +47,9 @@ export const dtuCalendar =
 
 export const tasks =
     [
-        "Glass (25 kr)",
-        "Cardboard + Plastic (25 kr)",
-        "Paper + Metal (25 kr)",
-        "Kitchen cloths (25 kr)",
+        "Glass ",
+        "Cardboard + Plastic ",
+        "Paper + Metal ",
+        "Kitchen cloths ",
         "Shopping"
     ];

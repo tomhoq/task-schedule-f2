@@ -8,6 +8,13 @@
   font-family: Arial, sans-serif; /* Use a clean, sans-serif font */
 }
 
+#main {
+  display: flex; /* Flexbox layout for main content */
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  height: 100vh; /* Full viewport height */
+}
+
 body {
   background-color: #f4f4f4; /* Light gray background for contrast */
   color: #333; /* Dark text color for readability */
@@ -25,7 +32,7 @@ body {
 
 /* Main Container */
 .container {
-  margin: auto;
+  margin: 0 auto;
   background-color: white; /* White background for the main container */
   padding: 20px; /* Padding around the container */
   padding-inline: 50px;
@@ -35,6 +42,25 @@ body {
   width: 100%; /* Allow the container to be responsive */
 }
 
+#main .buttons {
+  display: flex; /* Flexbox layout for buttons */
+  justify-content: center; /* Center buttons horizontally */
+  margin-block: 20px;
+}
+
+#main .buttons :nth-child(1) {
+  margin-right: 10px; /* Space between buttons */
+}
+
+button {
+  background-color: #ff6905; /* Blue background for buttons */
+  color: white; /* White text color for buttons */
+  border: none; /* Remove default border */
+  padding: 10px 20px; /* Padding for buttons */
+  border-radius: 5px; /* Rounded corners for buttons */
+  cursor: pointer; /* Pointer cursor on hover */
+  font-size: 1em; /* Font size for buttons */
+}
 /* Headings */
 h1, h2, h3 {
   text-align: center; /* Center align headings */
@@ -91,5 +117,10 @@ tbody tr:hover {
   }
   .container {
     padding-inline: 10px;
+  }
+
+  button {
+    padding: 8px 16px; /* Smaller padding for buttons */
+    font-size: 0.9em; /* Smaller font size for buttons */
   }
 }

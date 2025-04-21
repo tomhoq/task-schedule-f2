@@ -86,11 +86,15 @@ function getWeekNumber(today) {
             if (today >= monday && today < new Date(monday.getTime() + 7 * 86400000)) {
                 return week + 1; // Weeks start at 1
             }
-
-            if ( monday >= period?.skip?.start && monday < period?.skip?.end) {
+            
+            console.log(period.skip?.[0]);
+            if ( monday >= period?.skip?.[0] && monday < period?.skip?.[1]) {
                 monday = new Date(monday.getTime() + 7 * 86400000);
+                console.log("skipping week due to holiday " + week);
                 continue;
             }
+            console.log("Date " + monday);
+            console.log("skipping week " + week);
             periodWeeks++;
             week++;
 
